@@ -1,0 +1,10 @@
+cmake_minimum_required(VERSION 3.24)
+set(GCC_COMPILE_FLAGS "-g -fdiagnostics-color=always -Wno-narrowing -std=c++20")
+
+set(CMAKE_C_COMPILER "C:/msys64/mingw64/bin/gcc.exe")
+set(CMAKE_CXX_COMPILER "C:/msys64/mingw64/bin/g++.exe")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/CMakeFiles/modules")
+project(game)
+ADD_DEFINITIONS(${GCC_COMPILE_FLAGS})
+set(MODEL_SRC game.cpp board.cpp)
+add_library(model STATIC ${MODEL_SRC})
